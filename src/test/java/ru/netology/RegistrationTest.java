@@ -2,12 +2,9 @@ package ru.netology;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeMethod;
+
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -15,7 +12,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Configuration.holdBrowserOpen;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -26,7 +22,7 @@ public class RegistrationTest {
 
     @BeforeAll
     public static void openRegistrationPage() {
-        //  Configuration.headless = true;
+        Configuration.headless = true;
         open("http://localhost:9999/");
     }
             @Test
